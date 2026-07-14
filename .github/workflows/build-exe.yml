@@ -32,14 +32,7 @@ jobs:
       with:
         tag_name: v${{ github.run_number }}
         release_name: Release v${{ github.run_number }}
-        body: |
-          自動編譯版本
-          
-          📥 使用方式：
-          1. 下載 網站自動截圖工具.exe
-          2. 下載 ChromeDriver: https://chromedriver.chromium.org/
-          3. 將 chromedriver.exe 放在 EXE 同目錄
-          4. 雙擊 EXE 執行
+        body: Automated build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,8 +40,8 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/網站自動截圖工具.exe
-        asset_name: 網站自動截圖工具.exe
+        asset_path: ./dist/WebsiteScreenshotTool.exe
+        asset_name: WebsiteScreenshotTool.exe
         asset_content_type: application/octet-stream
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
