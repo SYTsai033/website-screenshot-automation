@@ -12,14 +12,14 @@ import os
 def build_exe():
     """Build EXE"""
     
-    # PyInstaller arguments
+    # PyInstaller arguments - correct syntax
     args = [
         'main.py',
         '--onefile',
         '--windowed',
         '--name=WebsiteScreenshotTool',
         '--distpath=dist',
-        '--buildpath=build',
+        '--workpath=build',
         '--specpath=.',
         '--hidden-import=selenium',
         '--hidden-import=schedule',
